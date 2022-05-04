@@ -1,5 +1,4 @@
-/**
- * @author		: Leopold Keller (leopold.keller@stud.h-da.de)
+/** * @author		: Leopold Keller (leopold.keller@stud.h-da.de)
  * @created		: 02/05/2022
  * @filename		: quadratwurzel
  */
@@ -21,7 +20,6 @@ do{
 letzter_Zwischenwert = Zwischenwert;
 
 Zwischenwert = 0.5 * (Zwischenwert + (Basiszahl/Zwischenwert));
-
 
 }while(letzter_Zwischenwert-Zwischenwert > 0.001);
 cout << Zwischenwert;

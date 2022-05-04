@@ -28,7 +28,6 @@ switch(Eingabe){
 		cout << "Geben Sie die gewünschte Anzahl ein: ";
 		cin >> Anzahl;
 		foo.resize(Anzahl);
-		cout << endl << foo.size() << endl;
 		foo.clear();
 		break;
 	
@@ -49,9 +48,11 @@ switch(Eingabe){
 		cout << "Das Minimum ist " << Zwischenwert << endl;
 		break;
 	case '4':
+		cout << "Der Inhalt des Arrays ist: {";
 		for(auto i : foo){
-		cout << i << endl;
+		cout << i << ",";
 		}
+		cout << "}" << endl;
 	default:
 		break;
 }
