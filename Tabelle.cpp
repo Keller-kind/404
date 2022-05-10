@@ -21,9 +21,12 @@ foo[0][i] = i;
 foo[i][0] = i;
 
 	}
-for(int i=1; i<size; i++){
-	for(int j=1; j<size; j++){
-		
+for(int i=0; i<=size; i++){
+	for(int j=0; j<=size; j++){
+	
+			if(i!=0 && j!=0)foo[i][j] = i*j;
+	cout << foo[i][j] << "\t";
+	if(j==size)	cout << endl;
 	}
 }
 
