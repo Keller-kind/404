@@ -1,0 +1,15 @@
+/**
+ * @author		: {{NAME}} ({{EMAIL}})
+ * @created		: {{TODAY}}
+ * @filename	: {{FILE}}
+ */
+#ifndef {{MACRO_GUARD}}
+#define {{MACRO_GUARD}}
+
+#include <{{FILE}}.cpp>
+
+
+
+
+
+ #endif /* {{MACRO_GUARD}} */

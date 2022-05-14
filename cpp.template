@@ -1,0 +1,23 @@
+/**
+ * @author		: {{NAME}} ({{EMAIL}})
+ * @created		: {{TODAY}}
+ * @filename	: {{FILE}}
+ */
+#ifndef {{MACRO_GUARD}}
+#define {{MACRO_GUARD}}
+
+#include <iostream>
+using namespace std;
+
+
+int main(){
+
+
+return 0;
+}
+
+
+
+
+
+ #endif /* {{MACRO_GUARD}} */
