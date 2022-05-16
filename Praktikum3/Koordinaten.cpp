@@ -1,4 +1,4 @@
-d/**
+/**
  * @author		: Leopold Keller (leopold.keller@stud.h-da.de)
  * @created		: 12/05/2022
  * @filename	: Koordinaten
@@ -10,22 +10,24 @@ d/**
 #include <vector>
 using namespace std;
 
-void FillField(vector<vector<char>> &matrix, vector<char> &lines){
+const int rows = 50;
+const int lines = 10;
+void FillField(char** matrix[rows][lines]){
 int x=10;
 int y=0;
-for(int i=0; i<matrix.size();i++){
-	for(int j=0; j<lines.size();j++){
-		if(i==0){matrix[i][j] = x; x--;}
-		if(j==49){matrix[i][j] = y/10; y++;}
+for(int i=0; i<lines;i++){
+	for(int j=0; j<rows;j++){
+		if(i==0){matrix[i][j] =(char) x; x--;}
+		if(j==49){matrix[i][j] =(char) y/10; y++;}
 
 
 	}
 }
 }
 
-void DrawField(vector<vector<char>> matrix, vector<char> lines){
-for(int i=0;i<matrix.size();i++){
-	for(int j=0; j<lines.size();j++){
+void DrawField(char** matrix[rows][lines]){
+for(int i=0;i<lines;i++){
+	for(int j=0; j<rows;j++){
 		switch(matrix[i][j]){
 			case '0': cout << "0";
 					break;
@@ -59,15 +61,10 @@ for(int i=0;i<matrix.size();i++){
 }
 
 int main(){
-vector<vector<char>> matrix;
-vector<char> lines;
-lines.resize(10);
-for(int i=0; i<matrix.size();i++){
+char matrix[rows][lines];
 
-matrix[i].resize(50);
-}
-FillField(matrix,lines);
-DrawField(matrix,lines);
+FillField(matrix[][]);
+DrawField(matrix[][]);
 
 }
 
