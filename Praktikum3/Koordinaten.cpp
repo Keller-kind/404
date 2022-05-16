@@ -1,5 +1,4 @@
-/**
- * @author		: Leopold Keller (leopold.keller@stud.h-da.de)
+/** * @author		: Leopold Keller (leopold.keller@stud.h-da.de)
  * @created		: 12/05/2022
  * @filename	: Koordinaten
  */
@@ -10,62 +9,31 @@
 #include <vector>
 using namespace std;
 
-const int rows = 50;
-const int lines = 10;
-void FillField(char** matrix[rows][lines]){
+
+int main(){
+vector <vector <char> > Field;
+Field.resize(50);
+vector<char> row;
+row.resize(10);
+for(int i=0;i<50;i++){
+Field.push_back(row);
+}
 int x=10;
 int y=0;
-for(int i=0; i<lines;i++){
-	for(int j=0; j<rows;j++){
-		if(i==0){matrix[i][j] =(char) x; x--;}
-		if(j==49){matrix[i][j] =(char) y/10; y++;}
-
-
-	}
-}
-}
-
-void DrawField(char** matrix[rows][lines]){
-for(int i=0;i<lines;i++){
-	for(int j=0; j<rows;j++){
-		switch(matrix[i][j]){
-			case '0': cout << "0";
-					break;
-			case '1': cout << "1";
-					break;
-			case '2': cout << "2";
-					break;	
-			case '3': cout << "3";
-					break;
-			case '4': cout << "4";	
-					break;
-			case '5': cout << "5";	
-					break;
-			case '6': cout << "6";	
-					break;
-			case '7': cout << "7";	
-					break;
-			case '8': cout << "8";	
-					break;
-			case '9': cout << "9";	
-					break;
-			case 'x': cout << "x";	
-					break;
-			default: cout << " ";
-					break;
-
-		}
+for(int i=0;i<50;i++){
+	for(int j=0;j<10;j++){
+	if(i==0){ Field[i].push_back(static_cast<char>(x));
+}else if(j==49 && (j+1)%10 == 0){Field[i].push_back(static_cast<char>(y));
+}else Field[i].push_back('\n');
 	
 	}
 }
+
+for(int i=0;i<Field.size();i++){
+	for(auto f : Field[i]){
+	cout << f;
+	}
 }
-
-int main(){
-char matrix[rows][lines];
-
-FillField(matrix[][]);
-DrawField(matrix[][]);
-
 }
 
 
