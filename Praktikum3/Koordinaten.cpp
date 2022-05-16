@@ -1,4 +1,4 @@
-/**
+d/**
  * @author		: Leopold Keller (leopold.keller@stud.h-da.de)
  * @created		: 12/05/2022
  * @filename	: Koordinaten
