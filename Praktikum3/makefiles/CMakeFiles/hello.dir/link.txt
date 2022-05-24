@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/hello.dir/meineklasse.cpp.o CMakeFiles/hello.dir/func.cpp.o  -o hello  -lmeineklasse.cpp -lfunc.cpp meineklasse.h func.h 

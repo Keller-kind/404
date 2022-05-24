@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/poldi/documents/programmieren1/git/404/Praktikum3/makefiles/func.cpp
+func.h
+/home/poldi/documents/programmieren1/git/404/Praktikum3/makefiles/func.h
+iostream
+-
+
+/home/poldi/documents/programmieren1/git/404/Praktikum3/makefiles/func.h
+iostream
+-
+

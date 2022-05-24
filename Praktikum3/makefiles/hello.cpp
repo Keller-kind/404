@@ -8,13 +8,14 @@
 
 #include <iostream>
 #include "func.h"
+#include "meineklasse.h"
 using namespace std;
 
 
 int main(){
 
-
 func(10);
+MeineKlasse abc = MeineKlasse(4);
 }
 
 
