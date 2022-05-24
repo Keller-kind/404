@@ -8,10 +8,11 @@
 
 #include <iostream>
 #include <vector>
+#include <random>
 using namespace std;
-std::random_device rd;     
-std::mt19937 rng(rd());   
-std::uniform_int_distribution<int> uni(min,max);
+std::random_device rd;
+std::mt19937 rng(rd());
+std::uniform_int_distribution<int> uni(0,9);
 
 template <typename T> void Insert(vector<T> &vec, string input) {
   try {
@@ -49,12 +50,13 @@ template <> void Generate(vector<float> &vec, int a){
 vec.push_back(0 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(0-1000))));
 }
 template <> void Generate(vector<string> &vec, int a){
-
+string x;
+for(int i = uni(rng);i>0;i--){
+x+=to_string(uni(rng));
+}
+vec.push_back(x);
 }
 int main() {
-std::random_device rd;
-std::mt19937 rng(rd());
-std::uniform_int_distribution<int> uni(0,9);
   bool running = true;
   bool firstRun = true;
   char Eingabe, type;
