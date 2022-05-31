@@ -112,14 +112,18 @@ int main() {
         break;
       case '5':
         if (type == 'i') {
-         cout << (isSorted(vecInt) ? "Ist Sortiert! " : "Ist nicht Sortiert! ") << endl;
+          cout << (isSorted(vecInt) ? "Ist Sortiert! " : "Ist nicht Sortiert! ")
+               << endl;
         }
         if (type == 'f') {
-         cout << (isSorted(vecFloat) ? "Ist Sortiert! " : "Ist nicht Sortiert! ") << endl;
+          cout << (isSorted(vecFloat) ? "Ist Sortiert! "
+                                      : "Ist nicht Sortiert! ")
+               << endl;
         }
         if (type == 's') {
-         cout << (isSorted(vecStr) ? "Ist Sortiert! " : "Ist nicht Sortiert! ") << endl;
-		}
+          cout << (isSorted(vecStr) ? "Ist Sortiert! " : "Ist nicht Sortiert! ")
+               << endl;
+        }
         break;
 
       case 'x':
