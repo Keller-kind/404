@@ -7,55 +7,12 @@
 #define TEMPLATES_CPP
 
 #include <iostream>
-#include <vector>
 #include <random>
+#include <vector>
+
+#include "functions.h"
 using namespace std;
-std::random_device rd;
-std::mt19937 rng(rd());
-std::uniform_int_distribution<int> uni(0,9);
 
-template <typename T> void Insert(vector<T> &vec, string input) {
-  try {
-    vec.push_back(input);
-  } catch (const std::invalid_argument &e) {
-    cout << "Geben Sie einen gültigen Wert ein!" << endl;
-  }
-}
-
-template <> void Insert(vector<int> &vec, string input) {
-  try {
-    vec.push_back(stoi(input));
-  } catch (const std::invalid_argument &e) {
-    cout << "Geben Sie einen gültigen Wert ein!" << endl;
-  }
-}
-
-template <> void Insert(vector<float> &vec, string input) {
-  try {
-    vec.push_back(stof(input));
-  } catch (const std::invalid_argument &e) {
-    cout << "Geben Sie einen gültigen Wert ein!" << endl;
-  }
-}
-
-template <typename T> void Generate(vector<T> &vec, int a){
-
-}
-template <> void Generate(vector<int> &vec, int a){
-for(int i=0;i<a;i++){
- vec.push_back(rand());
-}
-}
-template <> void Generate(vector<float> &vec, int a){
-vec.push_back(0 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(0-1000))));
-}
-template <> void Generate(vector<string> &vec, int a){
-string x;
-for(int i = uni(rng);i>0;i--){
-x+=to_string(uni(rng));
-}
-vec.push_back(x);
-}
 int main() {
   bool running = true;
   bool firstRun = true;
@@ -72,20 +29,20 @@ int main() {
       cout << "(3) - string \n";
       cin >> Eingabe;
       switch (Eingabe) {
-      case '1':
-        type = 'i';
-        firstRun = false;
-        break;
+        case '1':
+          type = 'i';
+          firstRun = false;
+          break;
 
-      case '2':
-        type = 'f';
-        firstRun = false;
-        break;
+        case '2':
+          type = 'f';
+          firstRun = false;
+          break;
 
-      case '3':
-        type = 's';
-        firstRun = false;
-        break;
+        case '3':
+          type = 's';
+          firstRun = false;
+          break;
       }
     }
     cout << "Werte verwalten - Auswahl \n";
@@ -97,28 +54,28 @@ int main() {
     cout << "(x) - Ende \n";
     cin >> Eingabe;
     switch (Eingabe) {
-    case '1':
-      while (true) {
-        cout << "Geben Sie eine Zahl ein: ";
+      case '1':
+        while (true) {
+          cout << "Geben Sie eine Zahl ein: ";
+          cin >> Input;
+          if (type == 'i') {
+            Insert(vecInt, Input);
+            break;
+          }
+          if (type == 'f') {
+            Insert(vecFloat, Input);
+            break;
+          }
+          if (type == 's') {
+            Insert(vecStr, Input);
+            break;
+          }
+        }
+        break;
+      case '2':
+        cout << "Wie viele Werte moechten Sie generieren lassen: ";
         cin >> Input;
         if (type == 'i') {
-          Insert(vecInt, Input);
-          break;
-        }
-        if (type == 'f') {
-          Insert(vecFloat, Input);
-          break;
-        }
-        if (type == 's') {
-          Insert(vecStr, Input);
-          break;
-        }
-      }
-      break;
-		case '2': 
-	  cout << "Wie viele Werte moechten Sie generieren lassen: ";
-	  cin >> Input;
-		if (type == 'i') {
           Generate(vecInt, stoi(Input));
         }
         if (type == 'f') {
@@ -126,9 +83,49 @@ int main() {
         }
         if (type == 's') {
           Generate(vecStr, stoi(Input));
+        }
+      case '3':
+        if (type == 'i') {
+          printVec(vecInt);
+        }
+        if (type == 'f') {
+          printVec(vecFloat);
+        }
+        if (type == 's') {
+          printVec(vecStr);
+        }
 
+        break;
+      case '4':
+        cout << "Geben Sie die gesuchte Zahl ein: ";
+        cin >> Input;
+
+        if (type == 'i') {
+          find(vecInt, Input);
+        }
+        if (type == 'f') {
+          find(vecFloat, Input);
+        }
+        if (type == 's') {
+          find(vecStr, Input);
+        }
+        break;
+      case '5':
+        if (type == 'i') {
+         cout << (isSorted(vecInt) ? "Ist Sortiert! " : "Ist nicht Sortiert! ") << endl;
+        }
+        if (type == 'f') {
+         cout << (isSorted(vecFloat) ? "Ist Sortiert! " : "Ist nicht Sortiert! ") << endl;
+        }
+        if (type == 's') {
+         cout << (isSorted(vecStr) ? "Ist Sortiert! " : "Ist nicht Sortiert! ") << endl;
+		}
+        break;
+
+      case 'x':
+        running = false;
+        break;
     }
   }
-}
 }
 #endif /* TEMPLATES_CPP */
