@@ -5,8 +5,9 @@
  */
 #ifndef AUFZAEHLUNGSTYPEN_CPP
 #define AUFZAEHLUNGSTYPEN_CPP
-
 #include <iostream>
+#include <vector>
+using namespace std;
 enum class Block{
 Mo1, Mo2, Mo3, Mo4, Mo5, Mo6, Mo7,
 Di1, Di2, Di3, Di4, Di5, Di6, Di7,
@@ -21,8 +22,19 @@ enum class Tag{
 
 };
 
-int main(){
+struct abc{
+vector<Block> block;
+Tag tag;
+abc(){};
+};
 
+bool isAfternoon(Block b){
+if (b==Block::Di4 || b==Block::Di5 || b==Block::Di6)return true;
+return false;
+
+}
+int main(){
+cout << (isAfternoon(Block::Di2) ? "Jawoll Nachmittag!" : "Ne bruder nichtmal Dienstag!");
 
 }
 

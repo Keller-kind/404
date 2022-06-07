@@ -1,5 +1,5 @@
 /**
- * @author		: Leopold Keller (leopold.keller@stud.h-da.de)
+ 
  * @created		: 30/05/2022
  * @filename	: zug
  */
