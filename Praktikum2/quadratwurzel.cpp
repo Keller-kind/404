@@ -20,7 +20,7 @@ do{
 letzter_Zwischenwert = Zwischenwert;
 
 Zwischenwert = 0.5 * (Zwischenwert + (Basiszahl/Zwischenwert));
-
+cout << letzter_Zwischenwert << endl;
 }while(letzter_Zwischenwert-Zwischenwert > 0.001);
 cout << Zwischenwert;
 }
